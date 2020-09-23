@@ -1,0 +1,2269 @@
+	TITLE	D:\VB Utility\Compiler\ControlPanel.frm
+	.386P
+include listing.inc
+if @Version gt 510
+.model FLAT
+else
+_TEXT	SEGMENT PARA USE32 PUBLIC 'CODE'
+_TEXT	ENDS
+_DATA	SEGMENT DWORD USE32 PUBLIC 'DATA'
+_DATA	ENDS
+CONST	SEGMENT DWORD USE32 PUBLIC 'CONST'
+CONST	ENDS
+_BSS	SEGMENT DWORD USE32 PUBLIC 'BSS'
+_BSS	ENDS
+$$SYMBOLS	SEGMENT BYTE USE32 'DEBSYM'
+$$SYMBOLS	ENDS
+$$TYPES	SEGMENT BYTE USE32 'DEBTYP'
+$$TYPES	ENDS
+_TLS	SEGMENT DWORD USE32 PUBLIC 'TLS'
+_TLS	ENDS
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?Activate@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?RefreshList@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?SetGenerateListing@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?Substitute@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?Form_Load@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?cbSelectAll_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?cbSelectNone_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?cbContinue_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?cbFinishCompile_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?cbSkipLink_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+;	COMDAT ?chkGenerateListing_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT PARA USE32 PUBLIC ''
+text$1	ENDS
+FLAT	GROUP _DATA, CONST, _BSS
+	ASSUME	CS: FLAT, DS: FLAT, SS: FLAT
+endif
+PUBLIC	?Activate@frmControlPanel@@AAGXXZ		; frmControlPanel::Activate
+EXTRN	@__vbaStrCopy:NEAR
+EXTRN	___vba@001B0C60:BYTE
+EXTRN	___vbaObjSet:NEAR
+EXTRN	@__vbaI2I4:NEAR
+EXTRN	___vbaHresultCheckObj:NEAR
+EXTRN	___vba@001AF984:BYTE
+EXTRN	@__vbaFreeObj:NEAR
+EXTRN	___vba@001AF998:BYTE
+EXTRN	___vba@001A0B98:BYTE
+EXTRN	@__vbaStrMove:NEAR
+EXTRN	@__vbaFreeStr:NEAR
+EXTRN	___vbaChkstk:NEAR
+EXTRN	___vbaExceptHandler:NEAR
+EXTRN	__except_list:DWORD
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S34	DB	0dH, 00H
+	DB	08H, 00H
+	DD	FLAT:$L33
+	DB	00H, 00H, 00H, 00H
+	DD	FLAT:$L32
+CONST	ENDS
+;	COMDAT ?Activate@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_Activate$ = 20
+_sCommandLine$ = 16
+_sApplication$ = 12
+_Activate$ = -24
+_unnamed_var1$ = -28
+_unnamed_var1$ = -32
+_unnamed_var1$ = -48
+_unnamed_var1$ = -64
+_unnamed_var1$ = -68
+_unnamed_var1$ = -72
+$S45 = -84
+$S46 = -88
+__$SEHRec$ = -20
+?Activate@frmControlPanel@@AAGXXZ PROC NEAR		; frmControlPanel::Activate, COMDAT
+
+; 119  : Public Function Activate(ByRef sApplication As String, ByRef sCommandLine As String) As String
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	92					; 0000005cH
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S34
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+4]
+	mov	eax, DWORD PTR _Activate$[ebp]
+	and	DWORD PTR [eax], 0
+
+; 120  :     msTerminationMode = ""
+
+	mov	edx, OFFSET FLAT:___vba@001B0C60
+	mov	ecx, DWORD PTR _Me$[ebp]
+	add	ecx, 56					; 00000038H
+	call	@__vbaStrCopy
+
+; 121  :     chkGenerateListing.Value = vbUnchecked
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+772]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	xor	ecx, ecx
+	call	@__vbaI2I4
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+228]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L259
+	push	228					; 000000e4H
+	push	OFFSET FLAT:___vba@001AF984
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -92+[ebp], eax
+	jmp	SHORT $L260
+$L259:
+	and	DWORD PTR -92+[ebp], 0
+$L260:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 122  :     tbApplication.Text = sApplication
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+776]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	mov	eax, DWORD PTR _sApplication$[ebp]
+	push	DWORD PTR [eax]
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+164]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L261
+	push	164					; 000000a4H
+	push	OFFSET FLAT:___vba@001AF998
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -96+[ebp], eax
+	jmp	SHORT $L262
+$L261:
+	and	DWORD PTR -96+[ebp], 0
+$L262:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 123  :     tbCommandLine.Text = sCommandLine
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+788]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	mov	eax, DWORD PTR _sCommandLine$[ebp]
+	push	DWORD PTR [eax]
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+164]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L263
+	push	164					; 000000a4H
+	push	OFFSET FLAT:___vba@001AF998
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -100+[ebp], eax
+	jmp	SHORT $L264
+$L263:
+	and	DWORD PTR -100+[ebp], 0
+$L264:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 124  :     Me.Show vbModal
+
+	mov	DWORD PTR _unnamed_var1$[ebp+8], -2147352572 ; 80020004H
+	mov	DWORD PTR _unnamed_var1$[ebp], 10	; 0000000aH
+	mov	DWORD PTR _unnamed_var1$[ebp+8], 1
+	mov	DWORD PTR _unnamed_var1$[ebp], 3
+	push	16					; 00000010H
+	pop	eax
+	call	___vbaChkstk
+	lea	esi, DWORD PTR _unnamed_var1$[ebp]
+	mov	edi, esp
+	movsd
+	movsd
+	movsd
+	movsd
+	push	16					; 00000010H
+	pop	eax
+	call	___vbaChkstk
+	lea	esi, DWORD PTR _unnamed_var1$[ebp]
+	mov	edi, esp
+	movsd
+	movsd
+	movsd
+	movsd
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+688]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L265
+	push	688					; 000002b0H
+	push	OFFSET FLAT:___vba@001A0B98
+	push	DWORD PTR _Me$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -104+[ebp], eax
+	jmp	SHORT $L266
+$L265:
+	and	DWORD PTR -104+[ebp], 0
+$L266:
+
+; 125  :     sApplication = tbApplication.Text
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+776]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+160]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L267
+	push	160					; 000000a0H
+	push	OFFSET FLAT:___vba@001AF998
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -108+[ebp], eax
+	jmp	SHORT $L268
+$L267:
+	and	DWORD PTR -108+[ebp], 0
+$L268:
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	DWORD PTR $S45[ebp], eax
+	and	DWORD PTR _unnamed_var1$[ebp], 0
+	mov	edx, DWORD PTR $S45[ebp]
+	mov	ecx, DWORD PTR _sApplication$[ebp]
+	call	@__vbaStrMove
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 126  :     sCommandLine = tbCommandLine.Text
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+788]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+160]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L269
+	push	160					; 000000a0H
+	push	OFFSET FLAT:___vba@001AF998
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -112+[ebp], eax
+	jmp	SHORT $L270
+$L269:
+	and	DWORD PTR -112+[ebp], 0
+$L270:
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	DWORD PTR $S46[ebp], eax
+	and	DWORD PTR _unnamed_var1$[ebp], 0
+	mov	edx, DWORD PTR $S46[ebp]
+	mov	ecx, DWORD PTR _sCommandLine$[ebp]
+	call	@__vbaStrMove
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 127  :     Activate = msTerminationMode
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	edx, DWORD PTR [eax+56]
+	lea	ecx, DWORD PTR _Activate$[ebp]
+	call	@__vbaStrCopy
+$L33:
+
+; 128  : End Function
+
+	push	$L276
+	jmp	SHORT $L271
+$L32:
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	and	eax, 4
+	test	eax, eax
+	je	SHORT $L47
+	lea	ecx, DWORD PTR _Activate$[ebp]
+	call	@__vbaFreeStr
+$L47:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeStr
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	ret	0
+$L271:
+$L274:
+	ret	0
+$L276:
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+8]
+	mov	eax, DWORD PTR _Activate$[ebp]
+	mov	ecx, DWORD PTR _Activate$[ebp]
+	mov	DWORD PTR [eax], ecx
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	16					; 00000010H
+?Activate@frmControlPanel@@AAGXXZ ENDP			; frmControlPanel::Activate
+text$1	ENDS
+PUBLIC	?RefreshList@frmControlPanel@@AAGXXZ		; frmControlPanel::RefreshList
+EXTRN	___vba@001AF9AC:BYTE
+EXTRN	___vbaForEachCollObj:NEAR
+EXTRN	___vba@001BADBC:BYTE
+EXTRN	___vba@001AF9C0:BYTE
+EXTRN	___vba@001AF9D4:BYTE
+EXTRN	___vbaNextEachCollObj:NEAR
+EXTRN	___vbaFreeObjList:NEAR
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S67	DB	06H, 00H
+	DB	04H, 00H
+	DB	00H, 00H, 00H, 00H
+	DD	FLAT:$L65
+	DD	FLAT:$L66
+CONST	ENDS
+;	COMDAT ?RefreshList@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_aCComponent$ = -20
+_unnamed_var1$ = -24
+_unnamed_var1$ = -28
+_unnamed_var1$ = -32
+_unnamed_var1$ = -48
+_unnamed_var1$ = -52
+_unnamed_var1$ = -56
+_unnamed_var1$ = -60
+_unnamed_var1$ = -64
+_unnamed_var1$ = -68
+_unnamed_var1$ = -72
+_unnamed_var1$ = -76
+$S69 = -84
+$S76 = -88
+__$SEHRec$ = -16
+?RefreshList@frmControlPanel@@AAGXXZ PROC NEAR		; frmControlPanel::RefreshList, COMDAT
+
+; 130  : Private Sub RefreshList()
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	push	ecx
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	100					; 00000064H
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S67
+
+; 131  :     Dim aCComponent As VBComponent
+; 132  :     lstProjectMembers.Clear
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+784]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+488]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L285
+	push	488					; 000001e8H
+	push	OFFSET FLAT:___vba@001AF9AC
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -92+[ebp], eax
+	jmp	SHORT $L286
+$L285:
+	and	DWORD PTR -92+[ebp], 0
+$L286:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 113  : Option Explicit
+
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax+52]
+	mov	ecx, DWORD PTR _Me$[ebp]
+	mov	ecx, DWORD PTR [ecx+52]
+	mov	ecx, DWORD PTR [ecx]
+	push	eax
+	call	DWORD PTR [ecx+80]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L287
+	push	80					; 00000050H
+	push	OFFSET FLAT:___vba@001BADBC
+	mov	eax, DWORD PTR _Me$[ebp]
+	push	DWORD PTR [eax+52]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -96+[ebp], eax
+	jmp	SHORT $L288
+$L287:
+	and	DWORD PTR -96+[ebp], 0
+$L288:
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+140]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L289
+	push	140					; 0000008cH
+	push	OFFSET FLAT:___vba@001AF9C0
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -100+[ebp], eax
+	jmp	SHORT $L290
+$L289:
+	and	DWORD PTR -100+[ebp], 0
+$L290:
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	DWORD PTR $S76[ebp], eax
+	and	DWORD PTR _unnamed_var1$[ebp], 0
+	push	DWORD PTR $S76[ebp]
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	push	eax
+	lea	eax, DWORD PTR _aCComponent$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	OFFSET FLAT:___vba@001AF9D4
+	call	___vbaForEachCollObj
+	mov	DWORD PTR $S69[ebp], eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	jmp	$L71
+$L70:
+
+; 133  :     For Each aCComponent In mIDE.ActiveVBProject.VBComponents
+; 134  :         Select Case aCComponent.Type
+
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _aCComponent$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _aCComponent$[ebp]
+	call	DWORD PTR [eax+80]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L291
+	push	80					; 00000050H
+	push	OFFSET FLAT:___vba@001AF9D4
+	push	DWORD PTR _aCComponent$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -104+[ebp], eax
+	jmp	SHORT $L292
+$L291:
+	and	DWORD PTR -104+[ebp], 0
+$L292:
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	DWORD PTR -108+[ebp], eax
+	cmp	DWORD PTR -108+[ebp], 0
+	jle	$L79
+	cmp	DWORD PTR -108+[ebp], 3
+	jle	SHORT $L80
+	cmp	DWORD PTR -108+[ebp], 5
+	je	SHORT $L80
+	jmp	$L79
+$L80:
+
+; 135  :             Case vbext_ct_ClassModule, vbext_ct_StdModule, vbext_ct_VBForm, vbext_ct_MSForm
+; 136  :                 lstProjectMembers.AddItem aCComponent.Name
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+784]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	mov	DWORD PTR _unnamed_var1$[ebp+8], -2147352572 ; 80020004H
+	mov	DWORD PTR _unnamed_var1$[ebp], 10	; 0000000aH
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _aCComponent$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _aCComponent$[ebp]
+	call	DWORD PTR [eax+64]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L293
+	push	64					; 00000040H
+	push	OFFSET FLAT:___vba@001AF9D4
+	push	DWORD PTR _aCComponent$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -112+[ebp], eax
+	jmp	SHORT $L294
+$L293:
+	and	DWORD PTR -112+[ebp], 0
+$L294:
+	push	16					; 00000010H
+	pop	eax
+	call	___vbaChkstk
+	lea	esi, DWORD PTR _unnamed_var1$[ebp]
+	mov	edi, esp
+	movsd
+	movsd
+	movsd
+	movsd
+	push	DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+492]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L295
+	push	492					; 000001ecH
+	push	OFFSET FLAT:___vba@001AF9AC
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -116+[ebp], eax
+	jmp	SHORT $L296
+$L295:
+	and	DWORD PTR -116+[ebp], 0
+$L296:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeStr
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+$L79:
+
+; 137  :             Case Else
+; 138  :                 'no code to check
+; 139  :         End Select
+; 140  :     Next
+
+	lea	eax, DWORD PTR _aCComponent$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	OFFSET FLAT:___vba@001AF9D4
+	call	___vbaNextEachCollObj
+	mov	DWORD PTR $S69[ebp], eax
+$L71:
+	cmp	DWORD PTR $S69[ebp], 0
+	jne	$L70
+
+; 141  : End Sub
+
+	push	$L302
+	jmp	SHORT $L297
+$L66:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeStr
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	2
+	call	___vbaFreeObjList
+	add	esp, 12					; 0000000cH
+	ret	0
+$L297:
+$L65:
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	2
+	call	___vbaFreeObjList
+	add	esp, 12					; 0000000cH
+	lea	ecx, DWORD PTR _aCComponent$[ebp]
+	call	@__vbaFreeObj
+$L300:
+	ret	0
+$L302:
+	xor	eax, eax
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+?RefreshList@frmControlPanel@@AAGXXZ ENDP		; frmControlPanel::RefreshList
+text$1	ENDS
+PUBLIC	?SetGenerateListing@frmControlPanel@@AAGXXZ	; frmControlPanel::SetGenerateListing
+EXTRN	___vbaInStr:NEAR
+EXTRN	___vba@001AF9E8:BYTE
+EXTRN	___vba@001AF9F8:BYTE
+EXTRN	___vba@001AA164:NEAR
+EXTRN	@__vbaVarMove:NEAR
+EXTRN	___vbaVarSub:NEAR
+EXTRN	___vbaInStrVar:NEAR
+EXTRN	___vba@001AA098:NEAR
+EXTRN	___vbaFreeVarList:NEAR
+EXTRN	___vbaStrCat:NEAR
+EXTRN	___vba@001AC574:NEAR
+EXTRN	___vba@001AFA08:BYTE
+EXTRN	___vba@001AFA38:BYTE
+EXTRN	___vba@001AFA24:BYTE
+EXTRN	___vba@001BC564:BYTE
+EXTRN	___vba@001AA060:NEAR
+EXTRN	___vbaLenBstr:NEAR
+EXTRN	___vbaFreeStrList:NEAR
+EXTRN	___vba@001AFA4C:BYTE
+EXTRN	@__vbaFreeVar:NEAR
+EXTRN	___vba@001A9FDC:NEAR
+EXTRN	___vbaErrorOverflow:NEAR
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S116	DB	06H, 00H
+	DB	04H, 00H
+	DB	00H, 00H, 00H, 00H
+	DD	FLAT:$L114
+	DD	FLAT:$L115
+CONST	ENDS
+;	COMDAT ?SetGenerateListing@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_sCommandLine$ = -20
+_posObjectFileSwitch$ = -24
+_sObjectFile$ = -28
+_unnamed_var1$ = -32
+_unnamed_var1$ = -36
+_unnamed_var1$ = -40
+_unnamed_var1$ = -44
+_unnamed_var1$ = -48
+_unnamed_var1$ = -52
+_unnamed_var1$ = -56
+_unnamed_var1$ = -60
+_unnamed_var1$ = -64
+_unnamed_var1$ = -68
+_unnamed_var1$ = -84
+_unnamed_var1$ = -100
+_unnamed_var1$ = -116
+_unnamed_var1$ = -132
+_unnamed_var1$ = -148
+_unnamed_var1$ = -164
+_unnamed_var1$ = -180
+_unnamed_var1$ = -196
+_unnamed_var1$ = -200
+_unnamed_var1$ = -204
+_unnamed_var1$ = -208
+_unnamed_var1$ = -212
+$S117 = -220
+__$SEHRec$ = -16
+?SetGenerateListing@frmControlPanel@@AAGXXZ PROC NEAR	; frmControlPanel::SetGenerateListing, COMDAT
+
+; 143  : Private Sub SetGenerateListing()
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	push	ecx
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	mov	eax, 220				; 000000dcH
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S116
+
+; 144  :     Dim sCommandLine As String, posObjectFileSwitch As Long, sObjectFile As String
+; 145  :     sCommandLine = tbCommandLine.Text
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+788]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+160]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L308
+	push	160					; 000000a0H
+	push	OFFSET FLAT:___vba@001AF998
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -224+[ebp], eax
+	jmp	SHORT $L309
+$L308:
+	and	DWORD PTR -224+[ebp], 0
+$L309:
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	DWORD PTR $S117[ebp], eax
+	and	DWORD PTR _unnamed_var1$[ebp], 0
+	mov	edx, DWORD PTR $S117[ebp]
+	lea	ecx, DWORD PTR _sCommandLine$[ebp]
+	call	@__vbaStrMove
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 146  :     If chkGenerateListing.Value = vbChecked Then
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+772]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+224]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L310
+	push	224					; 000000e0H
+	push	OFFSET FLAT:___vba@001AF984
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -228+[ebp], eax
+	jmp	SHORT $L311
+$L310:
+	and	DWORD PTR -228+[ebp], 0
+$L311:
+	movsx	eax, WORD PTR _unnamed_var1$[ebp]
+	dec	eax
+	neg	eax
+	sbb	eax, eax
+	inc	eax
+	neg	eax
+	mov	WORD PTR _unnamed_var1$[ebp], ax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	movsx	eax, WORD PTR _unnamed_var1$[ebp]
+	test	eax, eax
+	je	$L118
+
+; 147  :         posObjectFileSwitch = InStr(sCommandLine, "-Fo")
+
+	push	1
+	push	DWORD PTR _sCommandLine$[ebp]
+	push	OFFSET FLAT:___vba@001AF9E8
+	push	0
+	call	___vbaInStr
+	mov	DWORD PTR _posObjectFileSwitch$[ebp], eax
+
+; 148  :         If posObjectFileSwitch > 1 And InStr(sCommandLine, "-FA") = 0 Then
+
+	push	1
+	push	DWORD PTR _sCommandLine$[ebp]
+	push	OFFSET FLAT:___vba@001AF9F8
+	push	0
+	call	___vbaInStr
+	test	eax, eax
+	jne	$L121
+	cmp	DWORD PTR _posObjectFileSwitch$[ebp], 1
+	jle	$L121
+
+; 149  :             sObjectFile = Mid$(sCommandLine, posObjectFileSwitch + 3, InStr(posObjectFileSwitch + 4, sCommandLine, Chr(34)) - posObjectFileSwitch - 2)
+
+	mov	eax, DWORD PTR _sCommandLine$[ebp]
+	mov	DWORD PTR _unnamed_var1$[ebp+8], eax
+	mov	DWORD PTR _unnamed_var1$[ebp], 8
+	push	34					; 00000022H
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vba@001AA098
+	mov	eax, DWORD PTR _posObjectFileSwitch$[ebp]
+	mov	DWORD PTR _unnamed_var1$[ebp+8], eax
+	mov	DWORD PTR _unnamed_var1$[ebp], 3
+	mov	DWORD PTR _unnamed_var1$[ebp+8], 2
+	mov	DWORD PTR _unnamed_var1$[ebp], 2
+	mov	eax, DWORD PTR _posObjectFileSwitch$[ebp]
+	add	eax, 4
+	jo	$L86
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	0
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaInStrVar
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaVarSub
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaVarSub
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaVarMove
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _posObjectFileSwitch$[ebp]
+	add	eax, 3
+	jo	$L86
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	call	___vba@001AA164
+	mov	edx, eax
+	lea	ecx, DWORD PTR _sObjectFile$[ebp]
+	call	@__vbaStrMove
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	3
+	call	___vbaFreeVarList
+	add	esp, 16					; 00000010H
+
+; 150  :             tbCommandLine.Text = Left$(sCommandLine, posObjectFileSwitch - 1) & "-FAs -Fa" & Substitute(sObjectFile, ".obj", ".lst") & " " & Right$(sCommandLine, Len(sCommandLine) - posObjectFileSwitch + 1)
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+788]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	mov	edx, OFFSET FLAT:___vba@001AFA38
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrCopy
+	mov	edx, OFFSET FLAT:___vba@001AFA24
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrCopy
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _sObjectFile$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+1808]
+	mov	eax, DWORD PTR _posObjectFileSwitch$[ebp]
+	sub	eax, 1
+	jo	$L86
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	call	___vba@001AC574
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	push	OFFSET FLAT:___vba@001AFA08
+	call	___vbaStrCat
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaStrCat
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	push	OFFSET FLAT:___vba@001BC564
+	call	___vbaStrCat
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	call	___vbaLenBstr
+	sub	eax, DWORD PTR _posObjectFileSwitch$[ebp]
+	jo	$L86
+	add	eax, 1
+	jo	$L86
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	call	___vba@001AA060
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	call	___vbaStrCat
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+164]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L312
+	push	164					; 000000a4H
+	push	OFFSET FLAT:___vba@001AF998
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -232+[ebp], eax
+	jmp	SHORT $L313
+$L312:
+	and	DWORD PTR -232+[ebp], 0
+$L313:
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	9
+	call	___vbaFreeStrList
+	add	esp, 40					; 00000028H
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+$L121:
+
+; 151  :         End If
+; 152  :     Else
+
+	jmp	$L138
+$L118:
+
+; 153  :         posObjectFileSwitch = InStr(sCommandLine, "-Fo")
+
+	push	1
+	push	DWORD PTR _sCommandLine$[ebp]
+	push	OFFSET FLAT:___vba@001AF9E8
+	push	0
+	call	___vbaInStr
+	mov	DWORD PTR _posObjectFileSwitch$[ebp], eax
+
+; 154  :         If posObjectFileSwitch > 1 And InStr(sCommandLine, "-FA") > 0 Then
+
+	push	1
+	push	DWORD PTR _sCommandLine$[ebp]
+	push	OFFSET FLAT:___vba@001AF9F8
+	push	0
+	call	___vbaInStr
+	test	eax, eax
+	jle	$L138
+	cmp	DWORD PTR _posObjectFileSwitch$[ebp], 1
+	jle	$L138
+
+; 155  :             sObjectFile = Mid$(sCommandLine, posObjectFileSwitch + 3, InStr(posObjectFileSwitch + 4, sCommandLine, """") - 3)
+
+	mov	eax, DWORD PTR _posObjectFileSwitch$[ebp]
+	add	eax, 4
+	jo	$L86
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	push	OFFSET FLAT:___vba@001AFA4C
+	push	0
+	call	___vbaInStr
+	sub	eax, 3
+	jo	$L86
+	mov	DWORD PTR _unnamed_var1$[ebp+8], eax
+	mov	DWORD PTR _unnamed_var1$[ebp], 3
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _posObjectFileSwitch$[ebp]
+	add	eax, 3
+	jo	$L86
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	call	___vba@001AA164
+	mov	edx, eax
+	lea	ecx, DWORD PTR _sObjectFile$[ebp]
+	call	@__vbaStrMove
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeVar
+
+; 156  :             tbCommandLine.Text = Left$(sCommandLine, InStr(sCommandLine, "-FA") - 1) & Right$(sCommandLine, Len(sCommandLine) - posObjectFileSwitch + 1)
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+788]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	push	1
+	push	DWORD PTR _sCommandLine$[ebp]
+	push	OFFSET FLAT:___vba@001AF9F8
+	push	0
+	call	___vbaInStr
+	sub	eax, 1
+	jo	$L86
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	call	___vba@001AC574
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	call	___vbaLenBstr
+	sub	eax, DWORD PTR _posObjectFileSwitch$[ebp]
+	jo	$L86
+	add	eax, 1
+	jo	$L86
+	push	eax
+	push	DWORD PTR _sCommandLine$[ebp]
+	call	___vba@001AA060
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	call	___vbaStrCat
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+164]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L314
+	push	164					; 000000a4H
+	push	OFFSET FLAT:___vba@001AF998
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -236+[ebp], eax
+	jmp	SHORT $L315
+$L314:
+	and	DWORD PTR -236+[ebp], 0
+$L315:
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	3
+	call	___vbaFreeStrList
+	add	esp, 16					; 00000010H
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+$L138:
+
+; 157  :         End If
+; 158  :     End If
+; 159  :     DoEvents
+
+	call	___vba@001A9FDC
+
+; 160  : End Sub
+
+	push	$L321
+	jmp	SHORT $L316
+$L115:
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	9
+	call	___vbaFreeStrList
+	add	esp, 40					; 00000028H
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	5
+	call	___vbaFreeVarList
+	add	esp, 24					; 00000018H
+	ret	0
+$L316:
+$L114:
+	lea	ecx, DWORD PTR _sCommandLine$[ebp]
+	call	@__vbaFreeStr
+	lea	ecx, DWORD PTR _sObjectFile$[ebp]
+	call	@__vbaFreeStr
+$L319:
+	ret	0
+$L321:
+	xor	eax, eax
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+$L86:
+	call	___vbaErrorOverflow
+?SetGenerateListing@frmControlPanel@@AAGXXZ ENDP	; frmControlPanel::SetGenerateListing
+text$1	ENDS
+PUBLIC	?Substitute@frmControlPanel@@AAGXXZ		; frmControlPanel::Substitute
+EXTRN	___vbaStrVarMove:NEAR
+EXTRN	___vbaVarCat:NEAR
+EXTRN	___vba@001AFA58:NEAR
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S161	DB	0cH, 00H
+	DB	08H, 00H
+	DB	00H, 00H, 00H, 00H
+	DB	00H, 00H, 00H, 00H
+	DD	FLAT:$L160
+CONST	ENDS
+;	COMDAT ?Substitute@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Substitute$ = 24
+_sWith$ = 20
+_sReplace$ = 16
+_sSource$ = 12
+_posInstr$ = -24
+_Substitute$ = -28
+_unnamed_var1$ = -32
+_unnamed_var1$ = -48
+_unnamed_var1$ = -64
+_unnamed_var1$ = -80
+_unnamed_var1$ = -96
+__$SEHRec$ = -20
+?Substitute@frmControlPanel@@AAGXXZ PROC NEAR		; frmControlPanel::Substitute, COMDAT
+
+; 162  : Private Function Substitute(sSource As String, sReplace As String, sWith As String) As String
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	84					; 00000054H
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S161
+	mov	eax, DWORD PTR _Substitute$[ebp]
+	and	DWORD PTR [eax], 0
+
+; 163  :     Dim posInstr As Long
+; 164  :     Substitute = sSource
+
+	mov	eax, DWORD PTR _sSource$[ebp]
+	mov	edx, DWORD PTR [eax]
+	lea	ecx, DWORD PTR _Substitute$[ebp]
+	call	@__vbaStrCopy
+
+; 165  :     posInstr = InStr(1, Substitute, sReplace, vbTextCompare)
+
+	push	1
+	push	DWORD PTR _Substitute$[ebp]
+	mov	eax, DWORD PTR _sReplace$[ebp]
+	push	DWORD PTR [eax]
+	push	1
+	call	___vbaInStr
+	mov	DWORD PTR _posInstr$[ebp], eax
+$L162:
+
+; 166  :     Do While posInstr > 0
+
+	cmp	DWORD PTR _posInstr$[ebp], 0
+	jle	$L145
+
+; 167  :         Substitute = Left$(Substitute, posInstr - 1) & sWith & Right(Substitute, Len(Substitute) - (posInstr + Len(sReplace) - 1))
+
+	mov	eax, DWORD PTR _posInstr$[ebp]
+	sub	eax, 1
+	jo	$L146
+	push	eax
+	push	DWORD PTR _Substitute$[ebp]
+	call	___vba@001AC574
+	mov	edx, eax
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaStrMove
+	push	eax
+	mov	eax, DWORD PTR _sWith$[ebp]
+	push	DWORD PTR [eax]
+	call	___vbaStrCat
+	mov	DWORD PTR _unnamed_var1$[ebp+8], eax
+	mov	DWORD PTR _unnamed_var1$[ebp], 8
+	lea	eax, DWORD PTR _Substitute$[ebp]
+	mov	DWORD PTR _unnamed_var1$[ebp+8], eax
+	mov	DWORD PTR _unnamed_var1$[ebp], 16392	; 00004008H
+	push	DWORD PTR _Substitute$[ebp]
+	call	___vbaLenBstr
+	mov	esi, eax
+	mov	eax, DWORD PTR _sReplace$[ebp]
+	push	DWORD PTR [eax]
+	call	___vbaLenBstr
+	mov	ecx, DWORD PTR _posInstr$[ebp]
+	add	ecx, eax
+	jo	$L146
+	sub	ecx, 1
+	jo	$L146
+	sub	esi, ecx
+	jo	$L146
+	push	esi
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vba@001AFA58
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaVarCat
+	push	eax
+	call	___vbaStrVarMove
+	mov	edx, eax
+	lea	ecx, DWORD PTR _Substitute$[ebp]
+	call	@__vbaStrMove
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeStr
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	3
+	call	___vbaFreeVarList
+	add	esp, 16					; 00000010H
+
+; 168  :         posInstr = InStr(posInstr + Len(sWith), Substitute, sReplace)
+
+	mov	eax, DWORD PTR _sWith$[ebp]
+	push	DWORD PTR [eax]
+	call	___vbaLenBstr
+	mov	ecx, DWORD PTR _posInstr$[ebp]
+	add	ecx, eax
+	jo	SHORT $L146
+	push	ecx
+	push	DWORD PTR _Substitute$[ebp]
+	mov	eax, DWORD PTR _sReplace$[ebp]
+	push	DWORD PTR [eax]
+	push	0
+	call	___vbaInStr
+	mov	DWORD PTR _posInstr$[ebp], eax
+
+; 169  :     Loop
+
+	jmp	$L162
+$L145:
+
+; 170  : End Function
+
+	push	$L332
+	jmp	SHORT $L327
+$L160:
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	and	eax, 4
+	test	eax, eax
+	je	SHORT $L167
+	lea	ecx, DWORD PTR _Substitute$[ebp]
+	call	@__vbaFreeStr
+$L167:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeStr
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	3
+	call	___vbaFreeVarList
+	add	esp, 16					; 00000010H
+	ret	0
+$L327:
+$L330:
+	ret	0
+$L332:
+	mov	eax, DWORD PTR _Substitute$[ebp]
+	mov	ecx, DWORD PTR _Substitute$[ebp]
+	mov	DWORD PTR [eax], ecx
+	xor	eax, eax
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	20					; 00000014H
+$L146:
+	call	___vbaErrorOverflow
+?Substitute@frmControlPanel@@AAGXXZ ENDP		; frmControlPanel::Substitute
+text$1	ENDS
+PUBLIC	?Form_Load@frmControlPanel@@AAGXXZ		; frmControlPanel::Form_Load
+EXTRN	___vbaObjSetAddref:NEAR
+EXTRN	?theIDE__Get@clsConnect@@AAGXXZ:NEAR		; clsConnect::theIDE__Get
+EXTRN	_modAddIn:BYTE
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S175	DB	05H, 00H
+	DB	08H, 00H
+	DD	FLAT:$L174
+	DB	00H, 00H, 00H, 00H
+	DD	FLAT:$L173
+CONST	ENDS
+;	COMDAT ?Form_Load@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_unnamed_var1$ = -24
+__$SEHRec$ = -20
+?Form_Load@frmControlPanel@@AAGXXZ PROC NEAR		; frmControlPanel::Form_Load, COMDAT
+
+; 174  : Private Sub Form_Load()
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	12					; 0000000cH
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S175
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	eax, 1
+	mov	DWORD PTR __$SEHRec$[ebp+16], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	al, -2					; fffffffeH
+	mov	DWORD PTR _Me$[ebp], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+4]
+
+; 175  :     Set mIDE = modAddIn.theConnection.theIDE
+
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	push	DWORD PTR _modAddIn
+	call	?theIDE__Get@clsConnect@@AAGXXZ		; clsConnect::theIDE__Get
+	push	DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR _Me$[ebp]
+	add	eax, 52					; 00000034H
+	push	eax
+	call	___vbaObjSetAddref
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 176  :     RefreshList
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+1800]
+
+; 177  : End Sub
+
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0
+$L174:
+	push	$L343
+	jmp	SHORT $L338
+$L173:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	ret	0
+$L338:
+$L341:
+	ret	0
+$L343:
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+8]
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+?Form_Load@frmControlPanel@@AAGXXZ ENDP			; frmControlPanel::Form_Load
+text$1	ENDS
+PUBLIC	?cbSelectAll_Click@frmControlPanel@@AAGXXZ	; frmControlPanel::cbSelectAll_Click
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S193	DB	05H, 00H
+	DB	08H, 00H
+	DD	FLAT:$L192
+	DB	00H, 00H, 00H, 00H
+	DD	FLAT:$L191
+CONST	ENDS
+;	COMDAT ?cbSelectAll_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_idxListMember$ = -24
+_unnamed_var1$ = -28
+_unnamed_var1$ = -32
+_unnamed_var1$ = -36
+_unnamed_var1$ = -40
+_unnamed_var1$ = -44
+_unnamed_var1$ = -48
+__$SEHRec$ = -20
+?cbSelectAll_Click@frmControlPanel@@AAGXXZ PROC NEAR	; frmControlPanel::cbSelectAll_Click, COMDAT
+
+; 179  : Private Sub cbSelectAll_Click()
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	44					; 0000002cH
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S193
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	eax, 1
+	mov	DWORD PTR __$SEHRec$[ebp+16], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	al, -2					; fffffffeH
+	mov	DWORD PTR _Me$[ebp], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+4]
+
+; 180  :     Dim idxListMember As Long
+; 181  :     For idxListMember = 0 To lstProjectMembers.ListCount - 1
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+784]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+216]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L349
+	push	216					; 000000d8H
+	push	OFFSET FLAT:___vba@001AF9AC
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -60+[ebp], eax
+	jmp	SHORT $L350
+$L349:
+	and	DWORD PTR -60+[ebp], 0
+$L350:
+	mov	ax, WORD PTR _unnamed_var1$[ebp]
+	sub	ax, 1
+	jo	$L181
+	movsx	eax, ax
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	mov	DWORD PTR _unnamed_var1$[ebp], 1
+	and	DWORD PTR _idxListMember$[ebp], 0
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	jmp	SHORT $L195
+$L194:
+
+; 182  :         lstProjectMembers.Selected(idxListMember) = True
+
+	mov	eax, DWORD PTR _idxListMember$[ebp]
+	add	eax, DWORD PTR _unnamed_var1$[ebp]
+	jo	$L181
+	mov	DWORD PTR _idxListMember$[ebp], eax
+$L195:
+	mov	eax, DWORD PTR _idxListMember$[ebp]
+	cmp	eax, DWORD PTR _unnamed_var1$[ebp]
+	jg	SHORT $L180
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+784]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	push	-1
+	mov	ecx, DWORD PTR _idxListMember$[ebp]
+	call	@__vbaI2I4
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+316]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L351
+	push	316					; 0000013cH
+	push	OFFSET FLAT:___vba@001AF9AC
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -64+[ebp], eax
+	jmp	SHORT $L352
+$L351:
+	and	DWORD PTR -64+[ebp], 0
+$L352:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 183  :     Next
+
+	jmp	SHORT $L194
+$L180:
+
+; 184  : End Sub
+
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0
+$L192:
+	push	$L358
+	jmp	SHORT $L353
+$L191:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	ret	0
+$L353:
+$L356:
+	ret	0
+$L358:
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+8]
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+$L181:
+	call	___vbaErrorOverflow
+?cbSelectAll_Click@frmControlPanel@@AAGXXZ ENDP		; frmControlPanel::cbSelectAll_Click
+text$1	ENDS
+PUBLIC	?cbSelectNone_Click@frmControlPanel@@AAGXXZ	; frmControlPanel::cbSelectNone_Click
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S211	DB	05H, 00H
+	DB	08H, 00H
+	DD	FLAT:$L210
+	DB	00H, 00H, 00H, 00H
+	DD	FLAT:$L209
+CONST	ENDS
+;	COMDAT ?cbSelectNone_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_idxListMember$ = -24
+_unnamed_var1$ = -28
+_unnamed_var1$ = -32
+_unnamed_var1$ = -36
+_unnamed_var1$ = -40
+_unnamed_var1$ = -44
+_unnamed_var1$ = -48
+__$SEHRec$ = -20
+?cbSelectNone_Click@frmControlPanel@@AAGXXZ PROC NEAR	; frmControlPanel::cbSelectNone_Click, COMDAT
+
+; 186  : Private Sub cbSelectNone_Click()
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	44					; 0000002cH
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S211
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	eax, 1
+	mov	DWORD PTR __$SEHRec$[ebp+16], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	al, -2					; fffffffeH
+	mov	DWORD PTR _Me$[ebp], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+4]
+
+; 187  :     Dim idxListMember As Long
+; 188  :     For idxListMember = 0 To lstProjectMembers.ListCount - 1
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+784]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+216]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L364
+	push	216					; 000000d8H
+	push	OFFSET FLAT:___vba@001AF9AC
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -60+[ebp], eax
+	jmp	SHORT $L365
+$L364:
+	and	DWORD PTR -60+[ebp], 0
+$L365:
+	mov	ax, WORD PTR _unnamed_var1$[ebp]
+	sub	ax, 1
+	jo	$L199
+	movsx	eax, ax
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	mov	DWORD PTR _unnamed_var1$[ebp], 1
+	and	DWORD PTR _idxListMember$[ebp], 0
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	jmp	SHORT $L213
+$L212:
+
+; 189  :         lstProjectMembers.Selected(idxListMember) = False
+
+	mov	eax, DWORD PTR _idxListMember$[ebp]
+	add	eax, DWORD PTR _unnamed_var1$[ebp]
+	jo	$L199
+	mov	DWORD PTR _idxListMember$[ebp], eax
+$L213:
+	mov	eax, DWORD PTR _idxListMember$[ebp]
+	cmp	eax, DWORD PTR _unnamed_var1$[ebp]
+	jg	SHORT $L198
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+784]
+	push	eax
+	lea	eax, DWORD PTR _unnamed_var1$[ebp]
+	push	eax
+	call	___vbaObjSet
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	push	0
+	mov	ecx, DWORD PTR _idxListMember$[ebp]
+	call	@__vbaI2I4
+	push	eax
+	mov	eax, DWORD PTR _unnamed_var1$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	DWORD PTR [eax+316]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L366
+	push	316					; 0000013cH
+	push	OFFSET FLAT:___vba@001AF9AC
+	push	DWORD PTR _unnamed_var1$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -64+[ebp], eax
+	jmp	SHORT $L367
+$L366:
+	and	DWORD PTR -64+[ebp], 0
+$L367:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+
+; 190  :     Next
+
+	jmp	SHORT $L212
+$L198:
+
+; 191  : End Sub
+
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0
+$L210:
+	push	$L373
+	jmp	SHORT $L368
+$L209:
+	lea	ecx, DWORD PTR _unnamed_var1$[ebp]
+	call	@__vbaFreeObj
+	ret	0
+$L368:
+$L371:
+	ret	0
+$L373:
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+8]
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+$L199:
+	call	___vbaErrorOverflow
+?cbSelectNone_Click@frmControlPanel@@AAGXXZ ENDP	; frmControlPanel::cbSelectNone_Click
+text$1	ENDS
+PUBLIC	?cbContinue_Click@frmControlPanel@@AAGXXZ	; frmControlPanel::cbContinue_Click
+EXTRN	___vba@001B0C6C:BYTE
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S221	DB	01H, 00H
+	DB	08H, 00H
+	DD	FLAT:$L220
+CONST	ENDS
+;	COMDAT ?cbContinue_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_unnamed_var1$ = -24
+__$SEHRec$ = -20
+?cbContinue_Click@frmControlPanel@@AAGXXZ PROC NEAR	; frmControlPanel::cbContinue_Click, COMDAT
+
+; 193  : Private Sub cbContinue_Click()
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	16					; 00000010H
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S221
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	eax, 1
+	mov	DWORD PTR __$SEHRec$[ebp+16], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	al, -2					; fffffffeH
+	mov	DWORD PTR _Me$[ebp], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+4]
+
+; 194  :     msTerminationMode = "Next Module"
+
+	mov	edx, OFFSET FLAT:___vba@001B0C6C
+	mov	ecx, DWORD PTR _Me$[ebp]
+	add	ecx, 56					; 00000038H
+	call	@__vbaStrCopy
+
+; 195  :     Me.Hide
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+692]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L379
+	push	692					; 000002b4H
+	push	OFFSET FLAT:___vba@001A0B98
+	push	DWORD PTR _Me$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -36+[ebp], eax
+	jmp	SHORT $L216
+$L379:
+	and	DWORD PTR -36+[ebp], 0
+$L216:
+
+; 196  : End Sub
+
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0
+$L220:
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+8]
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+?cbContinue_Click@frmControlPanel@@AAGXXZ ENDP		; frmControlPanel::cbContinue_Click
+text$1	ENDS
+PUBLIC	?cbFinishCompile_Click@frmControlPanel@@AAGXXZ	; frmControlPanel::cbFinishCompile_Click
+EXTRN	___vba@001B0D40:BYTE
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S229	DB	01H, 00H
+	DB	08H, 00H
+	DD	FLAT:$L228
+CONST	ENDS
+;	COMDAT ?cbFinishCompile_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_unnamed_var1$ = -24
+__$SEHRec$ = -20
+?cbFinishCompile_Click@frmControlPanel@@AAGXXZ PROC NEAR ; frmControlPanel::cbFinishCompile_Click, COMDAT
+
+; 198  : Private Sub cbFinishCompile_Click()
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	16					; 00000010H
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S229
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	eax, 1
+	mov	DWORD PTR __$SEHRec$[ebp+16], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	al, -2					; fffffffeH
+	mov	DWORD PTR _Me$[ebp], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+4]
+
+; 199  :     msTerminationMode = "Finish Compile"
+
+	mov	edx, OFFSET FLAT:___vba@001B0D40
+	mov	ecx, DWORD PTR _Me$[ebp]
+	add	ecx, 56					; 00000038H
+	call	@__vbaStrCopy
+
+; 200  :     Me.Hide
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+692]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L387
+	push	692					; 000002b4H
+	push	OFFSET FLAT:___vba@001A0B98
+	push	DWORD PTR _Me$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -36+[ebp], eax
+	jmp	SHORT $L224
+$L387:
+	and	DWORD PTR -36+[ebp], 0
+$L224:
+
+; 201  : End Sub
+
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0
+$L228:
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+8]
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+?cbFinishCompile_Click@frmControlPanel@@AAGXXZ ENDP	; frmControlPanel::cbFinishCompile_Click
+text$1	ENDS
+PUBLIC	?cbSkipLink_Click@frmControlPanel@@AAGXXZ	; frmControlPanel::cbSkipLink_Click
+EXTRN	___vba@001B0D00:BYTE
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S237	DB	01H, 00H
+	DB	08H, 00H
+	DD	FLAT:$L236
+CONST	ENDS
+;	COMDAT ?cbSkipLink_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+_unnamed_var1$ = -24
+__$SEHRec$ = -20
+?cbSkipLink_Click@frmControlPanel@@AAGXXZ PROC NEAR	; frmControlPanel::cbSkipLink_Click, COMDAT
+
+; 203  : Private Sub cbSkipLink_Click()
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	16					; 00000010H
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S237
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	eax, 1
+	mov	DWORD PTR __$SEHRec$[ebp+16], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	al, -2					; fffffffeH
+	mov	DWORD PTR _Me$[ebp], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+4]
+
+; 204  :     msTerminationMode = "Skip to Link"
+
+	mov	edx, OFFSET FLAT:___vba@001B0D00
+	mov	ecx, DWORD PTR _Me$[ebp]
+	add	ecx, 56					; 00000038H
+	call	@__vbaStrCopy
+
+; 205  :     Me.Hide
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+692]
+	fnclex
+	mov	DWORD PTR _unnamed_var1$[ebp], eax
+	cmp	DWORD PTR _unnamed_var1$[ebp], 0
+	jge	SHORT $L395
+	push	692					; 000002b4H
+	push	OFFSET FLAT:___vba@001A0B98
+	push	DWORD PTR _Me$[ebp]
+	push	DWORD PTR _unnamed_var1$[ebp]
+	call	___vbaHresultCheckObj
+	mov	DWORD PTR -36+[ebp], eax
+	jmp	SHORT $L232
+$L395:
+	and	DWORD PTR -36+[ebp], 0
+$L232:
+
+; 206  : End Sub
+
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0
+$L236:
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+8]
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+?cbSkipLink_Click@frmControlPanel@@AAGXXZ ENDP		; frmControlPanel::cbSkipLink_Click
+text$1	ENDS
+PUBLIC	?chkGenerateListing_Click@frmControlPanel@@AAGXXZ ; frmControlPanel::chkGenerateListing_Click
+;	COMDAT CONST
+; File D:\VB Utility\Compiler\ControlPanel.frm
+CONST	SEGMENT
+$S244	DB	01H, 00H
+	DB	08H, 00H
+	DD	FLAT:$L243
+CONST	ENDS
+;	COMDAT ?chkGenerateListing_Click@frmControlPanel@@AAGXXZ
+text$1	SEGMENT
+_Me$ = 8
+__$SEHRec$ = -20
+?chkGenerateListing_Click@frmControlPanel@@AAGXXZ PROC NEAR ; frmControlPanel::chkGenerateListing_Click, COMDAT
+
+; 208  : Private Sub chkGenerateListing_Click()
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 12					; 0000000cH
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	push	8
+	pop	eax
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$S244
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	eax, 1
+	mov	DWORD PTR __$SEHRec$[ebp+16], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	and	al, -2					; fffffffeH
+	mov	DWORD PTR _Me$[ebp], eax
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+4]
+
+; 209  :     SetGenerateListing
+
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+1804]
+
+; 210  : End Sub
+
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0
+$L243:
+	mov	eax, DWORD PTR _Me$[ebp]
+	mov	eax, DWORD PTR [eax]
+	push	DWORD PTR _Me$[ebp]
+	call	DWORD PTR [eax+8]
+	mov	eax, DWORD PTR __$SEHRec$[ebp+16]
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	leave
+	ret	4
+?chkGenerateListing_Click@frmControlPanel@@AAGXXZ ENDP	; frmControlPanel::chkGenerateListing_Click
+text$1	ENDS
+END
